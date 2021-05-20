@@ -5,13 +5,14 @@ import com.example.usingkissdrysolid.animals.AnimalsDB
 import com.example.usingkissdrysolid.animals.IAnimal
 
 class WildAnimalsDB : IAnimal {
-    lateinit var listWildAnimal: MutableList<Animal>
+    var listWildAnimal: MutableList<Animal> = arrayListOf()
 
     fun addListPets(animal: Animal) {
         listWildAnimal.add(animal)
+        saveAnimal()
     }
 
     override fun saveAnimal() {
-        AnimalsDB().addListAnimals(listWildAnimal)
+        AnimalsDB().addAnimal(listWildAnimal)
     }
 }
