@@ -1,6 +1,5 @@
-package com.example.usingkissdrysolid.pets
+package com.example.usingkissdrysolid.pet
 
-import androidx.lifecycle.MutableLiveData
 import com.example.usingkissdrysolid.animals.Animal
 import com.example.usingkissdrysolid.animals.AnimalsDB
 import com.example.usingkissdrysolid.animals.IAnimal
@@ -14,6 +13,6 @@ class PetsDB : IAnimal {
     }
 
     override fun saveAnimal() {
-        AnimalsDB().addListAnimals(listPets)
+        AnimalsDB().addAnimal(listPets)
     }
 }

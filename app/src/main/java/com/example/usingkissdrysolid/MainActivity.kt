@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import com.example.usingkissdrysolid.animals.Animal
 import com.example.usingkissdrysolid.animals.AnimalsDB
-import com.example.usingkissdrysolid.pets.CreatePets
-import com.example.usingkissdrysolid.wildAnimals.CreateWildAnimal
+import com.example.usingkissdrysolid.pet.Pet
+import com.example.usingkissdrysolid.wildAnimal.CreateWildAnimal
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,14 +15,14 @@ class MainActivity : AppCompatActivity() {
 
         val timer = object : CountDownTimer(3000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
-                checkAnimals(Animal("Cat", "Pets"))
-                checkAnimals(Animal("Lion", "Will"))
-                checkAnimals(Animal("Dog", "Pets"))
-                checkAnimals(Animal("Snake", "Will"))
+                checkAnimalType(Animal("Cat", "Pets"))
+                checkAnimalType(Animal("Lion", "Will"))
+                checkAnimalType(Animal("Dog", "Pets"))
+                checkAnimalType(Animal("Snake", "Will"))
             }
 
             override fun onFinish() {
-                AnimalsDB.listAnimals.forEach {
+                AnimalsDB.animals.forEach {
                     it.forEach {
                         println(it.name)
                         println(it.type)
@@ -34,12 +34,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun checkAnimals(animal: Animal) {
+    fun checkAnimalType(animal: Animal) {
         if (animal.type == "Pets") {
-            CreatePets().createPets(animal.name, animal.type)
-        }
-
-        if (animal.type == "Will") {
+            Pet().createPets(animal.name, animal.type)
+        } else if (animal.type == "Will") {
             CreateWildAnimal().createWildAnimals(animal.name, animal.type)
         }
     }

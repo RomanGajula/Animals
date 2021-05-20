@@ -3,10 +3,10 @@ package com.example.usingkissdrysolid.animals
 class AnimalsDB {
 
     companion object {
-        var listAnimals: MutableList<MutableList<Animal>> = arrayListOf()
+        var animals: MutableList<MutableList<Animal>> = arrayListOf()
     }
 
-    fun addListAnimals(listAnimal: MutableList<Animal>) {
-        listAnimals.add(listAnimal)
+    fun addAnimal(listAnimal: MutableList<Animal>) {
+        animals.add(listAnimal)
     }
 }

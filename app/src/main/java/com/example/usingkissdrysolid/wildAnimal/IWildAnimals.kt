@@ -1,4 +1,4 @@
-package com.example.usingkissdrysolid.wildAnimals
+package com.example.usingkissdrysolid.wildAnimal
 
 import com.example.usingkissdrysolid.animals.Animal
 
